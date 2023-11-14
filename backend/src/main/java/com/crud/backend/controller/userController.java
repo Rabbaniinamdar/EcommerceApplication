@@ -37,10 +37,12 @@ public class userController {
         if (user == null) {
             return ResponseEntity.badRequest().body("User Not Found");
         }
-
+    
         if (!user.getPassword().equals(userLogin.getPassword())) {
             return ResponseEntity.badRequest().body("Invalid Password");
         }
+        System.out.println(user);
+
         return ResponseEntity.ok("Success");
     }
 
